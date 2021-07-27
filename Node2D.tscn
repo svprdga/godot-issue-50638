@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://jump_sound.wav" type="AudioStream" id=1]
+[ext_resource path="res://Node2D.gd" type="Script" id=2]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 204.0
+margin_top = 388.0
+margin_right = 525.0
+margin_bottom = 608.0
+text = "TRIGGER SOUND"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
